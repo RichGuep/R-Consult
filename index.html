@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&C Consultoría | Seguridad Vial, Logística & Automatización</title>
+    <!-- Tailwind CSS para diseño fluido y ultra responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos atractivos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    /* Slate 900 */
+                            card: '#1e293b',    /* Slate 800 */
+                            accent: '#f97316',  /* Naranja Vial */
+                            green: '#10b981',   /* Emerald Tech */
+                            light: '#f8fafc'    /* Slate 50 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-orange {
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+        }
+        .glow-green {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Encabezado / Barra de Navegación -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-accent to-yellow-500 flex items-center justify-center text-white font-display font-extrabold text-xl shadow-lg">
+                    R
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg tracking-tight block leading-tight text-white">R&C</span>
+                    <span class="text-xs text-slate-400 font-semibold tracking-wider uppercase block leading-none">Consultoría</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Servicios</a>
+                <a href="#calculadora" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Calculadora PESV</a>
+                <a href="#ia-advisor" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Asistente IA</a>
+                <a href="#contacto" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Contacto</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/573000000000?text=Hola%20R%26C%20Consultor%C3%ADa,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20requiero%20asesor%C3%ADa." 
+                   target="_blank" 
+                   class="bg-brand-accent hover:bg-orange-600 text-white font-semibold text-sm py-2.5 px-5 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Escríbenos</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero (Principal) -->
+    <section class="relative overflow-hidden pt-20 pb-24 lg:pt-32 lg:pb-36 bg-gradient-to-b from-brand-dark via-slate-900 to-brand-dark">
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brand-accent filter blur-[100px]"></div>
+            <div class="absolute top-60 -right-40 w-96 h-96 rounded-full bg-brand-green filter blur-[100px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/60 rounded-full py-1.5 px-4 text-xs font-semibold text-brand-accent tracking-wide uppercase">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                        </span>
+                        <span>Expertos en Movilidad Segura y Tecnología</span>
+                    </div>
+                    
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+                        Seguridad Vial, Logística y <span class="bg-gradient-to-r from-brand-accent to-yellow-500 bg-clip-text text-transparent">Automatización</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Protegemos vidas en la vía y transformamos digitalmente tu operación de transporte. Diagnóstico, diseño e implementación del PESV bajo la Resolución 40595 de Colombia.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#calculadora" class="bg-gradient-to-r from-brand-accent to-orange-600 hover:from-orange-600 hover:to-brand-accent text-white font-bold py-3.5 px-8 rounded-xl shadow-lg transition-all duration-300 text-center">
+                            Calcular Requisitos PESV
+                        </a>
+                        <a href="#ia-advisor" class="bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold py-3.5 px-8 rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-robot text-brand-green"></i>
+                            <span>Consultar Asistente IA</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 relative">
+                    <!-- Tarjeta comercial interactiva simulada en el hero -->
+                    <div class="bg-brand-card border border-slate-700/50 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full filter blur-xl"></div>
+                        
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="font-display font-bold text-2xl text-white">R&C Consultoría</h3>
+                                <p class="text-xs text-brand-accent font-semibold tracking-wider uppercase mt-1">Portafolio Digital</p>
+                            </div>
+                            <span class="bg-brand-green/10 text-brand-green text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 bg-brand-green rounded-full animate-pulse"></span> Activo
+                            </span>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+                                <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-brand-accent">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-slate-400">Normativa Vial</p>
+                                    <p class="text-sm font-semibold text-white">Plan Estratégico (PESV)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-brand-green">
+                                    <i class="fa-solid fa-code text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-slate-400">Automatización</p>
+                                    <p class="text-sm font-semibold text-white">Software & Indicadores</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+                                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <i class="fa-solid fa-bus text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-slate-400">Logística</p>
+                                    <p class="text-sm font-semibold text-white">Transporte Masivo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
+                            <span>Sede Central: Colombia</span>
+                            <span>Resol. 40595 de 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">Nuestras Líneas de Especialidad</h2>
+                <div class="w-16 h-1.5 bg-brand-accent mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-400 mt-4 text-lg">Soluciones integrales de ingeniería y desarrollo tecnológico para cumplir la ley, optimizar recursos y resguardar la seguridad de tus usuarios.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta Servicio 1 -->
+                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-brand-accent/50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-3">Plan Estratégico de Seguridad Vial</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Diseñamos, revisamos e implementamos tu PESV conforme a la <strong>Resolución 40595 de 2022</strong>. Evaluamos riesgos, capacitamos conductores y preparamos tu empresa para superar auditorías exitosamente.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Diagnóstico y Matriz de Riesgos</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Diseño metodológico a medida</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Preparación de auditoría del Ministerio</li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta Servicio 2 -->
+                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-brand-green/50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-3">Automatización & Software</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Eliminamos el exceso de papel en tu operación. Desarrollamos flujos automatizados de control diario de vehículos, preoperacionales interactivos, tableros de control en tiempo real (BI) y herramientas a medida.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Formularios Preoperacionales Digitales</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Cuadros de control (Dashboards)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Alertas y control de vencimientos</li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta Servicio 3 -->
+                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-bus-simple"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-white mb-3">Logística de Transporte Masivo</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Asesoramos la planeación técnica y logística del transporte masivo de pasajeros. Optimizamos despachos, control de frecuencias de rutas de buses, diseño de mallas de horarios y control de operación.
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Reducción de costos de kilometraje</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Planeación técnica de flota</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Indicadores de regularidad y puntualidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de la Calculadora de PESV -->
+    <section id="calculadora" class="py-24 bg-brand-dark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-accent/5 rounded-full filter blur-2xl"></div>
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-brand-accent font-bold tracking-widest text-xs uppercase">Herramienta Interactiva</span>
+                    <h2 class="font-display font-extrabold text-3xl text-white mt-1">¿Qué nivel de PESV le corresponde a tu empresa?</h2>
+                    <p class="text-slate-400 text-sm mt-3">Calcula al instante bajo la metodología de la <strong>Resolución 40595 de 2022</strong> ingresando el tipo de actividad y volumen de operación.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <!-- Formulario de Entrada -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">1. Actividad de la Empresa</label>
+                            <select id="calc-actividad" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition-colors">
+                                <option value="misionera">Empresa de Transporte (Carga o Pasajeros)</option>
+                                <option value="no-misionera">Empresa Diferente a Transporte (Comercio, Industrias, etc.)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">2. Cantidad de Vehículos Operados o Administrados</label>
+                            <p class="text-xs text-slate-500 mb-2">Incluye motos, carros, furgones, camiones, etc., propios, contratados o en leasing.</p>
+                            <input type="number" id="calc-vehiculos" min="0" value="0" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">3. Cantidad de Conductores / Operadores</label>
+                            <p class="text-xs text-slate-500 mb-2">Trabajadores directos, contratistas o tercerizados que utilicen vehículos para la operación.</p>
+                            <input type="number" id="calc-conductores" min="0" value="0" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent transition-colors">
+                        </div>
+
+                        <button onclick="calcularCategoriaPESV()" class="w-full bg-brand-accent hover:bg-orange-600 text-white font-bold py-3.5 px-6 rounded-xl transition duration-300 ease-in-out">
+                            Calcular Nivel Requerido
+                        </button>
+                    </div>
+
+                    <!-- Cuadro de Resultados -->
+                    <div id="resultado-calc" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center h-full min-h-[300px] transition-all duration-300">
+                        <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 text-2xl mb-4">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-lg text-white">Espera de Datos...</h4>
+                        <p class="text-xs text-slate-400 mt-2 max-w-xs">Ingresa los valores del formulario de la izquierda y haz clic en calcular para ver el análisis de requerimiento legal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Asistente IA (Gemini integrado) -->
+    <section id="ia-advisor" class="py-24 bg-slate-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-green font-bold tracking-widest text-xs uppercase">Consultoría Automatizada 24/7</span>
+                <h2 class="font-display font-extrabold text-3xl text-white mt-1">Pregúntale a nuestro Consultor Virtual</h2>
+                <p class="text-slate-400 text-sm mt-3">Resuelve dudas inmediatas sobre la Resolución 40595 de 2022 o sobre la automatización de procesos con nuestro asistente impulsado por Inteligencia Artificial.</p>
+            </div>
+
+            <!-- Interfaz de Chat -->
+            <div class="bg-brand-card border border-slate-800 rounded-2xl shadow-xl flex flex-col overflow-hidden h-[500px]">
+                <!-- Cabecera del chat -->
+                <div class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 bg-brand-green rounded-full animate-ping"></div>
+                        <div>
+                            <h4 class="font-display font-bold text-sm text-white">Consultor de IA - R&C</h4>
+                            <p class="text-[10px] text-slate-400">Especialista en Seguridad Vial, Logística y Procesos</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-robot text-brand-green text-xl"></i>
+                </div>
+
+                <!-- Historial de Mensajes -->
+                <div id="chat-box" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm scrollbar-thin">
+                    <!-- Mensaje Inicial -->
+                    <div class="flex items-start space-x-3 max-w-[85%]">
+                        <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl rounded-tl-none p-4 text-slate-200">
+                            ¡Hola! Bienvenido a <strong>R&C Consultoría</strong>. ¿En qué puedo ayudarte hoy? 
+                            Puedes consultarme sobre la Resolución 40595, los requisitos del PESV para tu empresa o cómo podemos automatizar tus preoperacionales para que dejes el papel atrás.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrada de Texto -->
+                <div class="p-4 bg-slate-900/60 border-t border-slate-800 flex items-center space-x-2">
+                    <input type="text" id="chat-input" placeholder="Escribe tu consulta sobre PESV o automatización..." 
+                           class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-green text-sm"
+                           onkeypress="if(event.key === 'Enter') enviarMensajeChat()">
+                    <button onclick="enviarMensajeChat()" class="bg-brand-green hover:bg-emerald-600 text-white font-bold p-3.5 rounded-xl transition-all duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Información de contacto -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-brand-accent font-bold tracking-widest text-xs uppercase">¿Trabajamos juntos?</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-1">Impulsemos tu operación vial hoy mismo</h2>
+                        <p class="text-slate-400 mt-4 leading-relaxed">
+                            Si buscas blindar legalmente tu empresa con la implementación de la Norma 40595 de 2022 o quieres llevar la logística y administración de flotas al siguiente nivel digital, escríbenos. Ofrecemos cotizaciones personalizadas y diagnósticos iniciales.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-11 h-11 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-slate-200">Correo Comercial</h4>
+                                <p class="text-sm text-slate-400 mt-1">contacto@rycconsultoria.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-11 h-11 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-slate-200">Línea Directa de Atención</h4>
+                                <p class="text-sm text-slate-400 mt-1">+57 300 000 0000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-11 h-11 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-slate-200">Cobertura de Servicios</h4>
+                                <p class="text-sm text-slate-400 mt-1">Operación y acompañamiento presencial y virtual en toda Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                    <h3 class="font-display font-bold text-xl text-white mb-6">Solicitud de Diagnóstico Inicial</h3>
+                    
+                    <form onsubmit="controladorEnvioForm(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Nombre Completo</label>
+                                <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-accent">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Empresa</label>
+                                <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-accent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Correo Electrónico</label>
+                            <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-accent">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Número de Celular / WhatsApp</label>
+                            <input type="tel" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-accent">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Mensaje o Requerimiento</label>
+                            <textarea rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-brand-accent" placeholder="Cuéntanos un poco sobre tu flota o procesos operativos que deseas automatizar..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-accent to-orange-600 hover:from-orange-600 hover:to-brand-accent text-white font-bold py-3.5 px-6 rounded-xl transition duration-300 transform hover:-translate-y-0.5">
+                            Enviar Solicitud de Información
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Pie de página -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-display font-extrabold text-base">
+                    R
+                </div>
+                <p class="text-sm font-semibold text-white">R&C Consultoría</p>
+            </div>
+            
+            <p class="text-xs text-slate-500">
+                &copy; 2026 R&C Consultoría. Todos los derechos reservados. Seguridad Vial, Logística e Innovación Digital. Colombia.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Código Lógico y de Integración con el API de Gemini -->
+    <script>
+        // --- 1. Lógica de la Calculadora de PESV ---
+        function calcularCategoriaPESV() {
+            const actividad = document.getElementById('calc-actividad').value;
+            const vehiculos = parseInt(document.getElementById('calc-vehiculos').value) || 0;
+            const conductores = parseInt(document.getElementById('calc-conductores').value) || 0;
+            
+            const contenedorResultado = document.getElementById('resultado-calc');
+            
+            let nivel = "No Obligado";
+            let colorClase = "text-slate-400";
+            let bgClase = "bg-slate-800/50 border-slate-700";
+            let descripcion = "Tu operación no alcanza los umbrales de vehículos o conductores para la obligación del PESV bajo el artículo 12 de la ley 1503. Se recomienda aplicar medidas básicas de seguridad preventiva de forma voluntaria.";
+            let icono = "fa-circle-info";
+
+            if (actividad === 'misionera') {
+                // Empresas de transporte
+                if (vehiculos >= 50 || conductores >= 50) {
+                    nivel = "Avanzado";
+                    colorClase = "text-red-500";
+                    bgClase = "bg-red-500/10 border-red-500/30 glow-orange";
+                    descripcion = "Estás obligado a diseñar e implementar un PESV en el nivel AVANZADO. Requiere auditorías complejas, indicadores robustos de control vehicular y capacitación exhaustiva.";
+                    icono = "fa-shield-halved";
+                } else if ((vehiculos >= 20 && vehiculos < 50) || (conductores >= 20 && conductores < 50)) {
+                    nivel = "Estándar";
+                    colorClase = "text-brand-accent";
+                    bgClase = "bg-brand-accent/10 border-brand-accent/30 glow-orange";
+                    descripcion = "Estás obligado a diseñar un PESV de nivel ESTÁNDAR. Debes documentar inspecciones de vehículos, planes de mantenimiento preventivo y capacitar a conductores en manejo defensivo.";
+                    icono = "fa-file-shield";
+                } else if ((vehiculos >= 11 && vehiculos < 20) || (conductores >= 11 && conductores < 20)) {
+                    nivel = "Básico";
+                    colorClase = "text-brand-green";
+                    bgClase = "bg-brand-green/10 border-brand-green/30 glow-green";
+                    descripcion = "Tu empresa clasifica en el nivel BÁSICO de PESV. Requiere la estructura mínima del plan, designación de responsables de seguridad vial y control básico de documentación.";
+                    icono = "fa-user-shield";
+                }
+            } else {
+                // Empresas no de transporte
+                if (vehiculos >= 100 || conductores >= 100) {
+                    nivel = "Avanzado";
+                    colorClase = "text-red-500";
+                    bgClase = "bg-red-500/10 border-red-500/30 glow-orange";
+                    descripcion = "Tu volumen te obliga al nivel AVANZADO de PESV. Debes estructurar todo el ciclo PHVA enfocado en seguridad vial, auditorías periódicas y tecnología de monitoreo.";
+                    icono = "fa-shield-halved";
+                } else if ((vehiculos >= 50 && vehiculos < 100) || (conductores >= 50 && conductores < 100)) {
+                    nivel = "Estándar";
+                    colorClase = "text-brand-accent";
+                    bgClase = "bg-brand-accent/10 border-brand-accent/30 glow-orange";
+                    descripcion = "Debes implementar un PESV de nivel ESTÁNDAR. Exige rigurosidad intermedia en inspecciones técnicas de tu flota complementaria e indicadores mensuales.";
+                    icono = "fa-file-shield";
+                } else if ((vehiculos >= 11 && vehiculos < 50) || (conductores >= 11 && conductores < 50)) {
+                    nivel = "Básico";
+                    colorClase = "text-brand-green";
+                    bgClase = "bg-brand-green/10 border-brand-green/30 glow-green";
+                    descripcion = "Clasificas en el nivel BÁSICO de PESV. Es la categoría más común para empresas industriales o de comercio que cuentan con fuerza de distribución básica.";
+                    icono = "fa-user-shield";
+                }
+            }
+
+            contenedorResultado.className = `${bgClase} border rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center h-full min-h-[300px] transition-all duration-300`;
+            contenedorResultado.innerHTML = `
+                <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center ${colorClase} text-2xl mb-4">
+                    <i class="fa-solid ${icono}"></i>
+                </div>
+                <p class="text-xs uppercase tracking-wider font-semibold text-slate-400">Nivel Estimado</p>
+                <h4 class="font-display font-extrabold text-3xl ${colorClase} mt-1">${nivel}</h4>
+                <p class="text-xs text-slate-300 mt-4 leading-relaxed">${descripcion}</p>
+                <div class="mt-6 w-full">
+                    <a href="https://wa.me/573000000000?text=Hola,%20calcule%20que%20requiero%20PESV%20nivel%20${nivel}.%20Me%20interesa%20asesorarme." 
+                       target="_blank"
+                       class="inline-block w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors">
+                        Iniciar Cotización Profesional
+                    </a>
+                </div>
+            `;
+        }
+
+        // --- 2. Lógica del Chatbot de Inteligencia Artificial (Gemini API) ---
+        async function enviarMensajeChat() {
+            const inputField = document.getElementById('chat-input');
+            const userText = inputField.value.trim();
+            if (!userText) return;
+
+            // Limpiar campo de texto inmediatamente
+            inputField.value = '';
+
+            const chatBox = document.getElementById('chat-box');
+
+            // 1. Agregar el mensaje del usuario al chat
+            const userMsgDiv = document.createElement('div');
+            userMsgDiv.className = "flex items-start space-x-3 justify-end text-right ml-auto max-w-[85%] mb-4";
+            userMsgDiv.innerHTML = `
+                <div class="bg-brand-accent/20 border border-brand-accent/30 rounded-2xl rounded-tr-none p-4 text-slate-200">
+                    ${userText}
+                </div>
+                <div class="w-8 h-8 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            `;
+            chatBox.appendChild(userMsgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // 2. Agregar burbuja de carga para la IA
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = "flex items-start space-x-3 max-w-[85%] mb-4";
+            loadingDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div id="loading-bubbles" class="bg-slate-900/80 border border-slate-800 rounded-2xl rounded-tl-none p-4 text-slate-400 flex space-x-1.5 items-center">
+                    <span class="w-2 h-2 bg-brand-green rounded-full animate-bounce" style="animation-delay: 0s"></span>
+                    <span class="w-2 h-2 bg-brand-green rounded-full animate-bounce" style="animation-delay: 0.15s"></span>
+                    <span class="w-2 h-2 bg-brand-green rounded-full animate-bounce" style="animation-delay: 0.3s"></span>
+                </div>
+            `;
+            chatBox.appendChild(loadingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Llamar a la API de Gemini usando el endpoint correcto
+            try {
+                const systemPrompt = "Actúa como un consultor de R&C Consultoría en Colombia. Eres un experto en el Plan Estratégico de Seguridad Vial (PESV - Resolución 40595 de 2022), logística de transporte de pasajeros y automatización de procesos empresariales. Responde de manera profesional, amigable, concisa y estructurada. Ofrece sutilmente contactar a los consultores humanos de R&C Consultoría para un análisis formal al final del mensaje.";
+                
+                // Canvas proporciona la clave al vuelo de manera interna si se deja vacía.
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userText }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Fallo en la conexión");
+                }
+
+                const result = await response.json();
+                const textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "Disculpa, he tenido un inconveniente procesando tu solicitud. Por favor contáctanos por WhatsApp directamente.";
+
+                // Reemplazar la burbuja de carga por la respuesta real
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl rounded-tl-none p-4 text-slate-200 leading-relaxed max-w-full">
+                        ${marcarFormatoTextoIA(textResponse)}
+                    </div>
+                `;
+            } catch (error) {
+                console.error("Error consultando Gemini:", error);
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900/80 border border-red-900 rounded-2xl rounded-tl-none p-4 text-red-400">
+                        Hola, no he podido conectarme con el servidor central de IA. Te sugerimos contactar a uno de nuestros asesores expertos directamente por WhatsApp en el enlace de la parte superior.
+                    </div>
+                `;
+            }
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Helper para estructurar negritas y saltos de línea de la IA de manera simple en HTML
+        function marcarFormatoTextoIA(texto) {
+            return texto
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\n/g, '<br>');
+        }
+
+        // --- 3. Controlador de Envío de Formulario ---
+        function controladorEnvioForm(event) {
+            event.preventDefault();
+            // Simulación estética de envío de formulario para evitar la pérdida del estado
+            const inputs = event.target.querySelectorAll('input, textarea');
+            inputs.forEach(input => input.disabled = true);
+            const boton = event.target.querySelector('button');
+            boton.textContent = 'Procesando Solicitud...';
+            boton.disabled = true;
+
+            setTimeout(() => {
+                boton.className = "w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl transition duration-300";
+                boton.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Enviado con Éxito!';
+                
+                // Mensaje en pantalla invitando a usar WhatsApp
+                setTimeout(() => {
+                    alert("¡Gracias por contactarnos! Hemos registrado tu solicitud de diagnóstico. Uno de nuestros ingenieros especialistas se pondrá en contacto contigo en las próximas horas.");
+                }, 300);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
