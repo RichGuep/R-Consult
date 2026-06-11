@@ -60,13 +60,14 @@
             
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Servicios</a>
+                <a href="#nosotros" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Quiénes Somos</a>
                 <a href="#calculadora" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Calculadora PESV</a>
                 <a href="#ia-advisor" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Asistente IA</a>
                 <a href="#contacto" class="text-sm font-medium text-slate-300 hover:text-brand-accent transition-colors">Contacto</a>
             </nav>
 
             <div class="flex items-center space-x-4">
-                <!-- 1. CAMBIA AQUÍ: Tu número de WhatsApp en la cabecera (sin "+" ni espacios, ej: 573215076843-573212749432) -->
+                <!-- 1. CAMBIA AQUÍ: Tu número de WhatsApp en la cabecera (sin "+" ni espacios, ej: 573101234567) -->
                 <a href="https://wa.me/TU_NUMERO_DE_WHATSAPP?text=Hola%20R%26C%20Consultor%C3%ADa,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20requiero%20asesor%C3%ADa." 
                    target="_blank" 
                    class="bg-brand-accent hover:bg-orange-600 text-white font-semibold text-sm py-2.5 px-5 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 flex items-center space-x-2">
@@ -171,62 +172,99 @@
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
-    <section id="servicios" class="py-24 bg-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">Nuestras Líneas de Especialidad</h2>
-                <div class="w-16 h-1.5 bg-brand-accent mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-400 mt-4 text-lg">Soluciones integrales de ingeniería y desarrollo tecnológico para cumplir la ley, optimizar recursos y resguardar la seguridad de tus usuarios.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tarjeta Servicio 1 -->
-                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-brand-accent/50 transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-route"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-xl text-white mb-3">Plan Estratégico de Seguridad Vial</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Diseñamos, revisamos e implementamos tu PESV conforme a la <strong>Resolución 40595 de 2022</strong>. Evaluamos riesgos, capacitamos conductores y preparamos tu empresa para superar auditorías exitosamente.
+    <!-- Sección Quiénes Somos & Trayectoria -->
+    <section id="nosotros" class="py-24 bg-brand-dark border-t border-b border-slate-800/60 relative">
+        <div class="absolute inset-0 pointer-events-none opacity-10">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-accent filter blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Columna Izquierda: Filosofía e Identidad -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-accent font-bold tracking-widest text-xs uppercase">Detrás de R&C</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+                        La fusión perfecta entre Ingeniería Vial y Tecnología
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Nacimos como respuesta a una necesidad crítica en el sector empresarial colombiano: 
+                        <strong>unir el estricto cumplimiento normativo con la agilidad digital moderna.</strong>
                     </p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Diagnóstico y Matriz de Riesgos</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Diseño metodológico a medida</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Preparación de auditoría del Ministerio</li>
-                    </ul>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        No somos solo asesores de papel. Somos ingenieros de transporte y desarrolladores de software que entienden los dolores del día a día de una flota operativa. Rediseñamos tus procesos, te blindamos ante el Ministerio y automatizamos el control preoperacional para que gestiones tu negocio en tiempo real.
+                    </p>
+
+                    <!-- Tarjeta de Co-fundadores/Consultor Principal -->
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl flex items-center space-x-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-accent to-yellow-500 flex items-center justify-center text-white text-xl font-bold font-display shadow-inner">
+                            R&C
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-white text-base">Equipo R&C Consultores</h4>
+                            <p class="text-xs text-brand-green font-semibold">Especialistas PESV & Desarrolladores BI</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Tarjeta Servicio 2 -->
-                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-brand-green/50 transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-gears"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-xl text-white mb-3">Automatización & Software</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Eliminamos el exceso de papel en tu operación. Desarrollamos flujos automatizados de control diario de vehículos, preoperacionales interactivos, tableros de control en tiempo real (BI) y herramientas a medida.
-                    </p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Formularios Preoperacionales Digitales</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Cuadros de control (Dashboards)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Alertas y control de vencimientos</li>
-                    </ul>
-                </div>
+                <!-- Columna Derecha: Currículum, Hitos y Experiencia de los Consultores -->
+                <div class="lg:col-span-7 space-y-8">
+                    <h3 class="font-display font-bold text-xl text-white flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-brand-accent"></i>
+                        Nuestro Currículum & Credenciales
+                    </h3>
 
-                <!-- Tarjeta Servicio 3 -->
-                <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 hover:border-blue-500/50 transition duration-300 transform hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                        <i class="fa-solid fa-bus-simple"></i>
+                    <!-- Línea de tiempo de hitos / Experiencia -->
+                    <div class="relative border-l border-slate-800 pl-6 ml-3 space-y-8">
+                        <!-- Hito 1: Seguridad Vial -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 bg-brand-accent w-4 h-4 rounded-full border-4 border-slate-900 shadow-lg"></span>
+                            <h4 class="text-white font-bold text-base leading-none">Especialización en Seguridad Vial & PESV</h4>
+                            <p class="text-xs text-brand-accent font-semibold mt-1">Más de 10 años de trayectoria conjunta</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Formación avanzada en Ingeniería de Vías y Transporte. Auditores líderes certificados en Sistemas de Gestión de Seguridad Vial y expertos en la implementación práctica de la Resolución 40595 de 2022 y la norma ISO 39001.
+                            </p>
+                        </div>
+
+                        <!-- Hito 2: Transporte Masivo -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 bg-brand-green w-4 h-4 rounded-full border-4 border-slate-900 shadow-lg"></span>
+                            <h4 class="text-white font-bold text-base leading-none">Logística en Sistemas de Transporte Masivo</h4>
+                            <p class="text-xs text-brand-green font-semibold mt-1">Consultoría de Alto Nivel en Operación de Flotas</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Experiencia directa planificando la programación técnica, diseño de mallas de horarios, y control de frecuencias para operadores de transporte masivo de pasajeros y empresas de logística de carga a nivel nacional.
+                            </p>
+                        </div>
+
+                        <!-- Hito 3: Automatización -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-0 bg-blue-500 w-4 h-4 rounded-full border-4 border-slate-900 shadow-lg"></span>
+                            <h4 class="text-white font-bold text-base leading-none">Automatización de Procesos Operativos</h4>
+                            <p class="text-xs text-blue-400 font-semibold mt-1">Transformación Digital e Integración de Sistemas</p>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                                Desarrollo de software, formularios dinámicos interactivos para inspecciones preoperacionales y diseño de tableros analíticos en Power BI para control gerencial, eliminando hasta un 95% el uso de formatos físicos e impresos.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="font-display font-bold text-xl text-white mb-3">Logística de Transporte Masivo</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Asesoramos la planeación técnica y logística del transporte masivo de pasajeros. Optimizamos despachos, control de frecuencias de rutas de buses, diseño de mallas de horarios y control de operación.
-                    </p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Reducción de costos de kilometraje</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Planeación técnica de flota</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Indicadores de regularidad y puntualidad</li>
-                    </ul>
+
+                    <!-- Muro de Estadísticas / Garantías del Equipo -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800">
+                        <div class="bg-slate-900/40 p-4 rounded-xl text-center border border-slate-800/60">
+                            <span class="block text-xl font-extrabold text-brand-accent">+10</span>
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider mt-1">Años de Exp.</span>
+                        </div>
+                        <div class="bg-slate-900/40 p-4 rounded-xl text-center border border-slate-800/60">
+                            <span class="block text-xl font-extrabold text-brand-green">100%</span>
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider mt-1">Auditorías Ok</span>
+                        </div>
+                        <div class="bg-slate-900/40 p-4 rounded-xl text-center border border-slate-800/60">
+                            <span class="block text-xl font-extrabold text-blue-400">+50</span>
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider mt-1">Empresas Asesoradas</span>
+                        </div>
+                        <div class="bg-slate-900/40 p-4 rounded-xl text-center border border-slate-800/60">
+                            <span class="block text-xl font-extrabold text-yellow-500">+15k</span>
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wider mt-1">Preoperacionales</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -357,7 +395,7 @@
                             <div>
                                 <h4 class="font-display font-bold text-slate-200">Correo Comercial</h4>
                                 <!-- 2. CAMBIA AQUÍ: Tu correo electrónico en la sección de contacto -->
-                                <p class="text-sm text-slate-400 mt-1">consultoria.rc13@gmail.com</p>
+                                <p class="text-sm text-slate-400 mt-1">TU_CORREO_ELECTRONICO@rycconsultoria.com</p>
                             </div>
                         </div>
 
@@ -368,7 +406,7 @@
                             <div>
                                 <h4 class="font-display font-bold text-slate-200">Línea Directa de Atención</h4>
                                 <!-- 3. CAMBIA AQUÍ: Tu número de teléfono con el formato visual que prefieras -->
-                                <p class="text-sm text-slate-400 mt-1">+57 3215076843</p>
+                                <p class="text-sm text-slate-400 mt-1">+57 TU_CELULAR_FORMATEADO</p>
                             </div>
                         </div>
 
