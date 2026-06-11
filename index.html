@@ -9,7 +9,7 @@
     <!-- Google Fonts: Inter & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght=600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome para iconos atractivos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -67,7 +67,7 @@
             </nav>
 
             <div class="flex items-center space-x-4">
-                <!-- WhatsApp del encabezado: Configurado con tu número real de Colombia -->
+                <!-- WhatsApp del encabezado -->
                 <a href="https://wa.me/573215076843?text=Hola%20R%26C%20Consultor%C3%ADa,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20requiero%20asesor%C3%ADa." 
                    target="_blank" 
                    class="bg-brand-accent hover:bg-orange-600 text-white font-semibold text-sm py-2.5 px-5 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5 flex items-center space-x-2">
@@ -101,7 +101,7 @@
                     </h1>
                     
                     <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Protegemos vidas en la vía y transformamos digitalmente tu operation de transporte. Diagnóstico, diseño e implementación del PESV bajo la Resolución 40595 de Colombia.
+                        Protegemos vidas en la vía y transformamos digitalmente tu operación de transporte. Diagnóstico, diseño e implementación del PESV bajo la Resolución 40595 de Colombia.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
@@ -240,7 +240,7 @@
                             <h4 class="text-white font-bold text-base leading-none">Procedimientos de Operación, Alistamiento & Contingencias</h4>
                             <p class="text-xs text-yellow-500 font-semibold mt-1">Garantía de Continuidad y Control de Flota</p>
                             <p class="text-slate-400 text-xs mt-2 leading-relaxed">
-                                Especialistas en la creación de procedimientos operativos estandarizados (SOPs) sólidos para la ejecución y control de operaciones logísticas de alta complejidad. Diseñamos protocolos estrictos para el alistamiento preoperacional de flota y estructuramos planes de contingencia tácticos para mitigar imprevistos viales, fallas técnicas y emergencias de transporte en ruta.
+                                Especialistas en la creación de procedimientos operativos estandarizados (SOPs) sólidos para la ejecución y control de operaciones logísticas de alta complejidad. Diseñamos de manera estricta el alistamiento preoperacional de flota y estructuramos planes de contingencia tácticos para mitigar imprevistos viales, fallas técnicas y emergencias de transporte en ruta.
                             </p>
                         </div>
 
@@ -354,7 +354,7 @@
                     </div>
                     <div class="flex items-center space-x-3">
                         <!-- Botón de engranaje para configurar la API Key de manera interactiva -->
-                        <button onclick="toggleSettingsChat()" class="text-slate-400 hover:text-white transition-colors" title="Configurar clave API de Gemini">
+                        <button id="gear-btn" onclick="toggleSettingsChat()" class="text-slate-400 hover:text-white transition-colors" title="Configurar clave API de Gemini">
                             <i class="fa-solid fa-gear text-lg"></i>
                         </button>
                         <i class="fa-solid fa-robot text-brand-green text-xl"></i>
@@ -363,7 +363,7 @@
 
                 <!-- Panel desplegable de Configuración de API Key (Oculto por defecto) -->
                 <div id="chat-settings" class="hidden bg-slate-950 border-b border-slate-800 p-4 transition-all duration-300">
-                    <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Clave de API de Gemini (Requerida en Netlify/Local)</label>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Clave de API de Gemini (Opcional - Almacenada en tu navegador)</label>
                     <div class="flex space-x-2">
                         <input type="password" id="api-key-input" placeholder="Pega tu clave API aquí (AI Studio)..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-brand-green">
                         <button onclick="guardarApiKey()" class="bg-brand-green hover:bg-emerald-600 text-white font-bold px-3 py-1.5 rounded-lg text-xs transition-colors">
@@ -371,7 +371,7 @@
                         </button>
                     </div>
                     <p class="text-[10px] text-slate-500 mt-2 leading-relaxed">
-                        Si vas a desplegar esta web fuera de Canvas, necesitas crear una clave API de Gemini gratuita en <a href="https://aistudio.google.com/" target="_blank" class="text-brand-accent underline">Google AI Studio</a> y guardarla aquí.
+                        Si vas a desplegar esta web fuera de Canvas y no has hardcodeado la clave en el script, puedes guardarla aquí localmente.
                     </p>
                 </div>
 
@@ -423,7 +423,6 @@
                             </div>
                             <div>
                                 <h4 class="font-display font-bold text-slate-200">Correo Comercial</h4>
-                                <!-- Enlace directo de correo corporativo configurado -->
                                 <p class="text-sm text-slate-400 mt-1">
                                     <a href="mailto:consultoria.rc13@gmail.com" class="hover:text-brand-accent transition-colors duration-300">
                                         consultoria.rc13@gmail.com
@@ -438,7 +437,6 @@
                             </div>
                             <div>
                                 <h4 class="font-display font-bold text-slate-200">Línea Directa de Atención</h4>
-                                <!-- Enlace interactivo de WhatsApp en la información de contacto -->
                                 <p class="text-sm text-slate-400 mt-1">
                                     <a href="https://wa.me/573215076843?text=Hola%20R%26C%20Consultor%C3%ADa,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20requiero%20asesor%C3%ADa." 
                                        target="_blank" 
@@ -517,14 +515,59 @@
         </div>
     </footer>
 
+    <!-- Contenedor para notificaciones personalizadas (Reemplaza alert nativo) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
     <!-- Código Lógico y de Integración con el API de Gemini -->
     <script>
+        // CONFIGURACIÓN DE TU CLAVE API DE GEMINI (HARDCODED)
+        // Reemplaza el texto "REEMPLAZA_CON_TU_API_KEY_DE_GEMINI" por tu clave API real de Google AI Studio.
+        // Si dejas tu clave real, la web la usará automáticamente y ocultará el botón de engranaje (⚙️) del chat.
+        const HARDCODED_API_KEY = "REEMPLAZA_CON_TU_API_KEY_DE_GEMINI";
+
         // Inicializar el input con la llave persistida de localStorage al cargar la página
         function inicializarApiKeyInput() {
-            const savedKey = localStorage.getItem('ryc_gemini_api_key');
-            if (savedKey) {
-                document.getElementById('api-key-input').value = savedKey;
+            const gearBtn = document.getElementById('gear-btn');
+            
+            // Si hay una clave API real en el código, ocultar el botón de engranaje para un diseño limpio
+            if (HARDCODED_API_KEY && HARDCODED_API_KEY !== "REEMPLAZA_CON_TU_API_KEY_DE_GEMINI" && HARDCODED_API_KEY.trim() !== "") {
+                if (gearBtn) gearBtn.classList.add('hidden');
+            } else {
+                // De lo contrario, cargar del almacenamiento local
+                const savedKey = localStorage.getItem('ryc_gemini_api_key');
+                if (savedKey && document.getElementById('api-key-input')) {
+                    document.getElementById('api-key-input').value = savedKey;
+                }
             }
+        }
+
+        // Sistema elegante de Notificaciones (Burbujas tipo Toast)
+        function mostrarToast(mensaje, tipo = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `p-4 rounded-xl shadow-lg text-sm font-semibold text-white transition-all duration-300 transform translate-y-5 opacity-0 flex items-center space-x-2 pointer-events-auto ${
+                tipo === 'success' ? 'bg-brand-green border-l-4 border-emerald-300' : 'bg-red-600 border-l-4 border-red-400'
+            }`;
+            
+            toast.innerHTML = `
+                <i class="fa-solid ${tipo === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'}"></i>
+                <span>${mensaje}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animar entrada
+            setTimeout(() => {
+                toast.classList.remove('translate-y-5', 'opacity-0');
+            }, 50);
+            
+            // Eliminar después de 4 segundos
+            setTimeout(() => {
+                toast.classList.add('translate-y-5', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 4000);
         }
 
         // Mostrar / Ocultar el panel de configuración del chat
@@ -533,16 +576,16 @@
             settingsPanel.classList.toggle('hidden');
         }
 
-        // Guardar la clave API en el navegador local
+        // Guardar la clave API en el navegador local (Fallback)
         function guardarApiKey() {
             const inputVal = document.getElementById('api-key-input').value.trim();
             if (inputVal) {
                 localStorage.setItem('ryc_gemini_api_key', inputVal);
-                alert("¡Clave de API de Gemini guardada correctamente para este navegador!");
+                mostrarToast("¡Clave de API de Gemini guardada correctamente en tu navegador!");
                 toggleSettingsChat();
             } else {
                 localStorage.removeItem('ryc_gemini_api_key');
-                alert("Se ha borrado la clave de API personalizada. El sistema intentará usar la clave predeterminada.");
+                mostrarToast("Se ha borrado la clave de API personalizada.", "error");
             }
         }
 
@@ -613,7 +656,6 @@
                 <h4 class="font-display font-extrabold text-3xl ${colorClase} mt-1">${nivel}</h4>
                 <p class="text-xs text-slate-300 mt-4 leading-relaxed">${descripcion}</p>
                 <div class="mt-6 w-full">
-                    <!-- Redirección WhatsApp de la calculadora configurada con tu número real -->
                     <a href="https://wa.me/573215076843?text=Hola,%20calcule%20que%20requiero%20PESV%20nivel%20${nivel}.%20Me%20interesa%20asesorarme." 
                        target="_blank"
                        class="inline-block w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors">
@@ -664,10 +706,10 @@
             chatBox.appendChild(loadingDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Intentar recuperar API Key predeterminada o la local del cliente
-            const apiKey = ""; 
+            // Determinar qué clave de API utilizar
             const savedKey = localStorage.getItem('ryc_gemini_api_key');
-            const activeKey = apiKey || savedKey || "";
+            const isHardcodedValid = HARDCODED_API_KEY && HARDCODED_API_KEY !== "REEMPLAZA_CON_TU_API_KEY_DE_GEMINI" && HARDCODED_API_KEY.trim() !== "";
+            const activeKey = isHardcodedValid ? HARDCODED_API_KEY : savedKey;
 
             if (!activeKey) {
                 // Alerta explicativa al usuario en lugar de bloquear con un crash de consola
@@ -680,17 +722,18 @@
                         Para interactuar con el Consultor Virtual en tu computadora local o desde tu servidor externo (como Netlify), debes configurar tu API Key gratuita:<br><br>
                         1. Haz clic en el ícono de <strong class="text-white"><i class="fa-solid fa-gear"></i> (Configuración)</strong> arriba a la derecha de este chat.<br>
                         2. Pega tu API Key (genérala gratis en <a href="https://aistudio.google.com/" target="_blank" class="text-brand-accent underline">Google AI Studio</a>).<br>
-                        3. Haz clic en Guardar y vuelve a enviar tu pregunta.
+                        3. Haz clic en Guardar y vuelve a enviar tu pregunta.<br><br>
+                        <em>Nota: Como propietario, puedes escribir esta clave permanentemente en tu archivo HTML para que tus clientes no tengan que hacer este proceso.</em>
                     </div>
                 `;
                 chatBox.scrollTop = chatBox.scrollHeight;
                 return;
             }
 
-            // Llamar a la API de Gemini usando el endpoint correcto
+            // Llamar a la API de Gemini usando el modelo estable para navegadores
             try {
                 const systemPrompt = "Actúa como un consultor de R&C Consultoría en Colombia. Eres un experto en el Plan Estratégico de Seguridad Vial (PESV - Resolución 40595 de 2022), logística de transporte de pasajeros y automatización de procesos empresariales. Responde de manera profesional, amigable, concisa y estructurada. Ofrece sutilmente contactar a los consultores humanos de R&C Consultoría para un análisis formal al final del mensaje.";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${activeKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${activeKey}`;
 
                 const payload = {
                     contents: [{ parts: [{ text: userText }] }],
@@ -706,10 +749,7 @@
                 });
 
                 if (!response.ok) {
-                    if (response.status === 400 || response.status === 403) {
-                        throw new Error("Clave de API inválida o denegada.");
-                    }
-                    throw new Error("Fallo en la conexión");
+                    throw new Error("Fallo en la autenticación o en la conexión de red.");
                 }
 
                 const result = await response.json();
@@ -732,7 +772,7 @@
                     </div>
                     <div class="bg-slate-900/80 border border-red-900/50 rounded-2xl rounded-tl-none p-4 text-slate-300">
                         <span class="text-red-400 font-bold"><i class="fa-solid fa-circle-exclamation"></i> Error de conexión con el Consultor Virtual</span><br><br>
-                        No hemos podido conectar con la inteligencia artificial. Por favor, asegúrate de que tu clave de API sea válida ingresando al engranaje <i class="fa-solid fa-gear"></i> en la esquina superior del chat.<br><br>
+                        No hemos podido conectar con la inteligencia artificial. Por favor, asegúrate de que tu clave de API sea válida haciendo clic en el engranaje <i class="fa-solid fa-gear"></i> en la esquina superior del chat.<br><br>
                         Si el error persiste, puedes contactar de inmediato con nuestro equipo humano vía <a href="https://wa.me/573215076843" target="_blank" class="text-brand-accent font-bold underline">WhatsApp haciendo clic aquí</a>.
                     </div>
                 `;
@@ -762,10 +802,8 @@
                 boton.className = "w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl transition duration-300";
                 boton.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ¡Enviado con Éxito!';
                 
-                // Mensaje en pantalla invitando a usar WhatsApp
-                setTimeout(() => {
-                    alert("¡Gracias por contactarnos! Hemos registrado tu solicitud de diagnóstico. Uno de nuestros ingenieros especialistas se pondrá en contacto contigo en las próximas horas.");
-                }, 300);
+                // Lanzar toast corporativo
+                mostrarToast("¡Gracias por registrar tu solicitud de diagnóstico! Nos comunicaremos contigo a la brevedad.");
             }, 1500);
         }
     </script>
