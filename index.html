@@ -43,7 +43,7 @@
         }
     </style>
 </head>
-<body class="bg-brand-dark text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-brand-dark text-slate-100 font-sans min-h-screen flex flex-col antialiased" onload="inicializarApiKeyInput()">
 
     <!-- Encabezado / Barra de Navegación -->
     <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-slate-800">
@@ -352,7 +352,27 @@
                             <p class="text-[10px] text-slate-400">Especialista en Seguridad Vial, Logística y Procesos</p>
                         </div>
                     </div>
-                    <i class="fa-solid fa-robot text-brand-green text-xl"></i>
+                    <div class="flex items-center space-x-3">
+                        <!-- Botón de engranaje para configurar la API Key de manera interactiva -->
+                        <button onclick="toggleSettingsChat()" class="text-slate-400 hover:text-white transition-colors" title="Configurar clave API de Gemini">
+                            <i class="fa-solid fa-gear text-lg"></i>
+                        </button>
+                        <i class="fa-solid fa-robot text-brand-green text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Panel desplegable de Configuración de API Key (Oculto por defecto) -->
+                <div id="chat-settings" class="hidden bg-slate-950 border-b border-slate-800 p-4 transition-all duration-300">
+                    <label class="block text-xs font-semibold text-slate-400 uppercase mb-2">Clave de API de Gemini (Requerida en Netlify/Local)</label>
+                    <div class="flex space-x-2">
+                        <input type="password" id="api-key-input" placeholder="Pega tu clave API aquí (AI Studio)..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-brand-green">
+                        <button onclick="guardarApiKey()" class="bg-brand-green hover:bg-emerald-600 text-white font-bold px-3 py-1.5 rounded-lg text-xs transition-colors">
+                            Guardar
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-slate-500 mt-2 leading-relaxed">
+                        Si vas a desplegar esta web fuera de Canvas, necesitas crear una clave API de Gemini gratuita en <a href="https://aistudio.google.com/" target="_blank" class="text-brand-accent underline">Google AI Studio</a> y guardarla aquí.
+                    </p>
                 </div>
 
                 <!-- Historial de Mensajes -->
@@ -499,6 +519,33 @@
 
     <!-- Código Lógico y de Integración con el API de Gemini -->
     <script>
+        // Inicializar el input con la llave persistida de localStorage al cargar la página
+        function inicializarApiKeyInput() {
+            const savedKey = localStorage.getItem('ryc_gemini_api_key');
+            if (savedKey) {
+                document.getElementById('api-key-input').value = savedKey;
+            }
+        }
+
+        // Mostrar / Ocultar el panel de configuración del chat
+        function toggleSettingsChat() {
+            const settingsPanel = document.getElementById('chat-settings');
+            settingsPanel.classList.toggle('hidden');
+        }
+
+        // Guardar la clave API en el navegador local
+        function guardarApiKey() {
+            const inputVal = document.getElementById('api-key-input').value.trim();
+            if (inputVal) {
+                localStorage.setItem('ryc_gemini_api_key', inputVal);
+                alert("¡Clave de API de Gemini guardada correctamente para este navegador!");
+                toggleSettingsChat();
+            } else {
+                localStorage.removeItem('ryc_gemini_api_key');
+                alert("Se ha borrado la clave de API personalizada. El sistema intentará usar la clave predeterminada.");
+            }
+        }
+
         // --- 1. Lógica de la Calculadora de PESV ---
         function calcularCategoriaPESV() {
             const actividad = document.getElementById('calc-actividad').value;
@@ -617,13 +664,33 @@
             chatBox.appendChild(loadingDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
 
+            // Intentar recuperar API Key predeterminada o la local del cliente
+            const apiKey = ""; 
+            const savedKey = localStorage.getItem('ryc_gemini_api_key');
+            const activeKey = apiKey || savedKey || "";
+
+            if (!activeKey) {
+                // Alerta explicativa al usuario en lugar de bloquear con un crash de consola
+                loadingDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl rounded-tl-none p-4 text-slate-200 leading-relaxed max-w-full">
+                        <span class="text-amber-500 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Clave API de Gemini Requerida</span><br><br>
+                        Para interactuar con el Consultor Virtual en tu computadora local o desde tu servidor externo (como Netlify), debes configurar tu API Key gratuita:<br><br>
+                        1. Haz clic en el ícono de <strong class="text-white"><i class="fa-solid fa-gear"></i> (Configuración)</strong> arriba a la derecha de este chat.<br>
+                        2. Pega tu API Key (genérala gratis en <a href="https://aistudio.google.com/" target="_blank" class="text-brand-accent underline">Google AI Studio</a>).<br>
+                        3. Haz clic en Guardar y vuelve a enviar tu pregunta.
+                    </div>
+                `;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                return;
+            }
+
             // Llamar a la API de Gemini usando el endpoint correcto
             try {
                 const systemPrompt = "Actúa como un consultor de R&C Consultoría en Colombia. Eres un experto en el Plan Estratégico de Seguridad Vial (PESV - Resolución 40595 de 2022), logística de transporte de pasajeros y automatización de procesos empresariales. Responde de manera profesional, amigable, concisa y estructurada. Ofrece sutilmente contactar a los consultores humanos de R&C Consultoría para un análisis formal al final del mensaje.";
-                
-                // Canvas proporciona la clave al vuelo de manera interna si se deja vacía.
-                const apiKey = ""; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${activeKey}`;
 
                 const payload = {
                     contents: [{ parts: [{ text: userText }] }],
@@ -639,6 +706,9 @@
                 });
 
                 if (!response.ok) {
+                    if (response.status === 400 || response.status === 403) {
+                        throw new Error("Clave de API inválida o denegada.");
+                    }
                     throw new Error("Fallo en la conexión");
                 }
 
@@ -660,8 +730,10 @@
                     <div class="w-8 h-8 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center flex-shrink-0">
                         <i class="fa-solid fa-robot"></i>
                     </div>
-                    <div class="bg-slate-900/80 border border-red-900 rounded-2xl rounded-tl-none p-4 text-red-400">
-                        Hola, no he podido conectarme con el servidor central de IA. Te sugerimos contactar a uno de nuestros asesores expertos directamente por WhatsApp en el enlace de la parte superior.
+                    <div class="bg-slate-900/80 border border-red-900/50 rounded-2xl rounded-tl-none p-4 text-slate-300">
+                        <span class="text-red-400 font-bold"><i class="fa-solid fa-circle-exclamation"></i> Error de conexión con el Consultor Virtual</span><br><br>
+                        No hemos podido conectar con la inteligencia artificial. Por favor, asegúrate de que tu clave de API sea válida ingresando al engranaje <i class="fa-solid fa-gear"></i> en la esquina superior del chat.<br><br>
+                        Si el error persiste, puedes contactar de inmediato con nuestro equipo humano vía <a href="https://wa.me/573215076843" target="_blank" class="text-brand-accent font-bold underline">WhatsApp haciendo clic aquí</a>.
                     </div>
                 `;
             }
